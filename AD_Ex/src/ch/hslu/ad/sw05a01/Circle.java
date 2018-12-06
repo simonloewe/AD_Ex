@@ -35,7 +35,7 @@ public class Circle {
      * Create a new circle at default position with default color.
      */
     public Circle() {
-        this(68, 200, 0, "blue");
+        this(68, 230, 0, "blue");
     }
 
     /**
@@ -177,6 +177,7 @@ public class Circle {
             yPosition += delta;
             draw();
         }
+        erase();
     }
 
     /**
