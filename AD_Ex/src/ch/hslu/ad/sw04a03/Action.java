@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ch.hslu.ad.sw04a02;
+package ch.hslu.ad.sw04a03;
 
 /**
  *
- * @author simon.loewe
+ * @author lion
  */
-public class OutOfSpaceException {
+public class Action {
     
 }

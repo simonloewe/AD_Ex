@@ -18,6 +18,12 @@ public class Main {
         test.add(3);
         test.add(123);
         test.add(31);
+        test.add(22);
+        test.add(22);
+        test.outArray();
+        test.checkIfFuturValues(3);
+        test.removeByValue(123);
+        System.out.println("---------");
         test.outArray();
     }
 }

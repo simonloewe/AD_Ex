@@ -22,7 +22,14 @@ public interface Array {
 
     public void removeByIndex(int index);
     
-    public boolean sameValue(int value);
+    public boolean checkIfValueAlreadyExists(int value ,int index);
 
     public void outArray();
+    
+    public void findByValue(int value);
+    
+    public void findByIndex(int index);
+    
+    public boolean checkIfFuturValues(int value);
+
 }
