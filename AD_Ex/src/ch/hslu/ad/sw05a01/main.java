@@ -5,27 +5,26 @@
  */
 package ch.hslu.ad.sw05a01;
 
+import java.awt.Color;
+
 /**
  *
  * @author simon.loewe
  */
-public class main {
+public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
-        Ball test = new Ball();
-        Thread thread = new Thread(test, "-------------------------------------");
-        thread.start();
-        Thread aa = new Thread(test, "-------------------------------------");
-        aa.start();
-        Thread bbb = new Thread(test, "-------------------------------------");
-        bbb.start();
+        Canvas.getCanvas();
+
+        Ball b = new Ball(); 
         
-        /**Canvas.getCanvas();
-
-        Circle ball = new Circle();
-        ball.makeVisible();
-        ball.slowMoveVertical((400-68));*/
+        for (int i = 0; i < 1000; i++) {
+            Thread t = new Thread(b, "myThread"+i);
+            t.start();
+            Thread.sleep(1000);
+            System.out.println(t.getId() + t.getName());
+        }
     }
 
 }

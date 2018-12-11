@@ -9,11 +9,15 @@ package ch.hslu.ad.sw05a01;
  *
  * @author simon.loewe
  */
-public class Ball extends Circle implements Runnable {
+public class Ball extends Circle implements Runnable{
+
 
     @Override
     public void run() {
-        makeVisible();
-        slowMoveVertical(400 - 68);
+        Circle c = new Circle(); 
+        c.makeVisible();
+        c.slowMoveVertical((400-diameter));
     }
+    
+    
 }

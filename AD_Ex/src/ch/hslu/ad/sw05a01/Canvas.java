@@ -69,7 +69,7 @@ public class Canvas {
      * @param height the desired height for the canvas.
      * @param bgColor the desired background color of the canvas.
      */
-    private Canvas(String title, int width, int height, Color bgColor) {
+    public Canvas(String title, int width, int height, Color bgColor) {
         frame = new JFrame();
         canvas = new CanvasPane();
         frame.setContentPane(canvas);
@@ -202,7 +202,7 @@ public class Canvas {
     /**
      * Redraw ell shapes currently on the Canvas.
      */
-    private void redraw() {
+    public void redraw() {
         erase();
         for (Object shape : objects) {
             shapes.get(shape).draw(graphic);
