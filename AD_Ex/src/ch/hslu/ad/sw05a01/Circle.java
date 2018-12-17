@@ -172,10 +172,10 @@ public class Circle {
         int delta;
 
         if (distance < 0) {
-            delta = -1;
+            delta = -(ThreadLocalRandom.current().nextInt(1, 10));
             distance = -distance;
         } else {
-            delta = 1;
+            delta = ThreadLocalRandom.current().nextInt(1, 10);
         }
 
         for (int i = 0; i < distance; i++) {

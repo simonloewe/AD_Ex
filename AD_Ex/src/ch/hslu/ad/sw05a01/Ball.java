@@ -21,6 +21,4 @@ public class Ball extends Circle implements Runnable{
         c.makeVisible();
         c.slowMoveVertical((400-diameter));
     }
-    
-    
 }

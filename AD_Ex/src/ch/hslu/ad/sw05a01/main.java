@@ -22,7 +22,7 @@ public class Main {
         for (int i = 0; i < 1000; i++) {
             Thread t = new Thread(b, "myThread"+i);
             t.start();
-            Thread.sleep(1000);
+            Thread.sleep(500); //so there is distance between the balls
             System.out.println(t.getId() + t.getName());
         }
     }
