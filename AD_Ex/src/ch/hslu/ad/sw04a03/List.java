@@ -12,5 +12,5 @@ import java.util.LinkedList;
  * @author lion
  */
 public interface List {
-    public 
+    
 }
