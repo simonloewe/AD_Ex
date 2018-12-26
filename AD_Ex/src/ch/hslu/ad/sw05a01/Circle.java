@@ -16,6 +16,7 @@
 package ch.hslu.ad.sw05a01;
 
 import java.awt.geom.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * A circle that can be manipulated and that draws itself on a canvas.
@@ -25,7 +26,7 @@ import java.awt.geom.*;
  */
 public class Circle {
 
-    private int diameter;
+    public int diameter = ThreadLocalRandom.current().nextInt(10, 100 + 1);
     private int xPosition;
     private int yPosition;
     private String color;
@@ -35,7 +36,11 @@ public class Circle {
      * Create a new circle at default position with default color.
      */
     public Circle() {
-        this(68, 230, 0, "blue");
+        diameter = ThreadLocalRandom.current().nextInt(10, 99 + 1);
+        xPosition = ThreadLocalRandom.current().nextInt(0, 599 + 1);
+        yPosition = 0;
+        color = "red";
+        //this(68, 230, 90, "black");
     }
 
     /**
@@ -167,17 +172,17 @@ public class Circle {
         int delta;
 
         if (distance < 0) {
-            delta = -1;
+            delta = -(ThreadLocalRandom.current().nextInt(1, 10));
             distance = -distance;
         } else {
-            delta = 1;
+            delta = ThreadLocalRandom.current().nextInt(1, 10);
         }
 
         for (int i = 0; i < distance; i++) {
             yPosition += delta;
             draw();
         }
-        erase();
+        makeInvisible(); 
     }
 
     /**

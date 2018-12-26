@@ -9,11 +9,16 @@ package ch.hslu.ad.sw05a01;
  *
  * @author simon.loewe
  */
-public class Ball extends Circle implements Runnable {
+public class Ball extends Circle implements Runnable{
 
+/** one could add colour changing to the circle class now.
+ * because the point of this ex is to understand the threads im leaving that
+ * for now... 
+*/ 
     @Override
     public void run() {
-        makeVisible();
-        slowMoveVertical(400 - 68);
+        Circle c = new Circle(); 
+        c.makeVisible();
+        c.slowMoveVertical((400-diameter));
     }
 }
