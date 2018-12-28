@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ch.hslu.ad.sw08a06;
+package ch.hslu.ad.sw09a02;
+
+import ch.hslu.ad.sw08a06.*;
 
 /**
  *
@@ -11,7 +13,7 @@ package ch.hslu.ad.sw08a06;
  */
 public class Sort {
 
-    int aSize = 100000;
+    int aSize = 100_000;
 
     public int[] a = new int[aSize];
 
@@ -91,4 +93,44 @@ public class Sort {
             System.out.println(i + " | " + a[i]);
         }
     }
+
+    private static final void exchange(final int[] a, final int firstIndex, final int secondIndex) {
+        int tmp;
+        tmp = a[firstIndex];
+        a[firstIndex] = a[secondIndex];
+        a[secondIndex] = tmp;
+    }
+    
+    public static final void quickSort(final int[] a, final int left, final int right){
+        int up = left;          //linke grenze setzen
+        int down = right -1;    //rechte Grenze (ohne Trennelement)
+        int t = a[right];       //rechtes Element als Trennelement
+        boolean allChecked = false;
+        
+        do{
+            while(a[up] < t){
+                up++;           //suche grösseres >= element von links an
+            }
+            while ((a[down] >= t) && (down > up)){
+                down--;         //suche echt kleinesers < element von rechts an
+            }
+            if(down > up){      //solange keine überschneidung
+                exchange(a, up, down);  
+                up++; down--;   //linke und rechte Grenze verschieben
+            }else{
+                allChecked = true;
+            }
+        }while(!allChecked);
+        
+        exchange(a, up, right); //Trennelement an endgültige position a[up]
+        
+        if(left < (up - 1)){
+            quickSort(a, left, (up - 1));
+        } //linke hälfte
+        
+        if((up + 1) < right){
+            quickSort(a, (up + 1), right);
+        } //linke hälfte
+    }
+   
 }
