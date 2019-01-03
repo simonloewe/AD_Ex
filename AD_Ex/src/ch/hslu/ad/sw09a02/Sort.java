@@ -13,7 +13,7 @@ import ch.hslu.ad.sw08a06.*;
  */
 public class Sort {
 
-    int aSize = 10_000;
+    int aSize = 15_000;
 
     public int[] a = new int[aSize];
 
@@ -100,37 +100,39 @@ public class Sort {
         a[firstIndex] = a[secondIndex];
         a[secondIndex] = tmp;
     }
-    
-    public static final void quickSort(final int[] a, final int left, final int right){
-        int up = left;          //linke grenze setzen
-        int down = right -1;    //rechte Grenze (ohne Trennelement)
-        int t = a[right];       //rechtes Element als Trennelement
+
+    public static final void quickSort(final int[] a, final int left, final int right) {
+        int links = left;          //linke grenze setzen
+        int rechts = right - 1;    //rechte Grenze (ohne Trennelement)
+        int trennElement = a[right];       //rechtes Element als Trennelement
         boolean allChecked = false;
-        
-        do{
-            while(a[up] < t){
-                up++;           //suche grösseres >= element von links an
+
+        do {
+            while (a[links] < trennElement) {
+                links++;           //suche grösseres >= element von links an
             }
-            while ((a[down] >= t) && (down > up)){
-                down--;         //suche echt kleinesers < element von rechts an
+            while ((a[rechts] > trennElement) && (rechts > links)) {
+                rechts--;         //suche echt kleinesers < element von rechts an
             }
-            if(down > up){      //solange keine überschneidung
-                exchange(a, up, down);  
-                up++; down--;   //linke und rechte Grenze verschieben
-            }else{
+            if (rechts > links) {      //solange keine überschneidung
+                exchange(a, links, rechts);
+                links++;
+                rechts--;   //linke und rechte Grenze verschieben
+            }
+            else {
                 allChecked = true;
             }
-        }while(!allChecked);
-        
-        exchange(a, up, right); //Trennelement an endgültige position a[up]
-        
-        if(left < (up - 1)){
-            quickSort(a, left, (up - 1));
+        } while (!allChecked);
+
+        exchange(a, links, right); //Trennelement an endgültige position a[up]
+
+        if (left < (links - 1)) {
+            quickSort(a, left, (links - 1));
         } //linke hälfte
-        
-        if((up + 1) < right){
-            quickSort(a, (up + 1), right);
+
+        if ((links + 1) < right) {
+            quickSort(a, (links + 1), right);
         } //linke hälfte
     }
-   
+
 }
