@@ -13,7 +13,7 @@ import ch.hslu.ad.sw08a06.*;
  */
 public class Sort {
 
-    int aSize = 100_000;
+    int aSize = 10_000;
 
     public int[] a = new int[aSize];
 
