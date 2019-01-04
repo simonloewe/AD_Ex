@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ch.hslu.ad.sw09a02;
+package ch.hslu.ad.sw09a03;
 
+import ch.hslu.ad.sw09a02.*;
 import ch.hslu.ad.sw08a06.*;
 
 /**
@@ -14,6 +15,8 @@ import ch.hslu.ad.sw08a06.*;
 public class Sort {
 
     int aSize = 13_000;
+    
+    static int finishSize = 10;
 
     public int[] a = new int[aSize];
 
@@ -135,6 +138,45 @@ public class Sort {
         } //linke hälfte
     }
 
+    public static final void quickInsertionSort(final int[] a, final int left, final int right) {
+        int links = left;          //linke grenze setzen
+        int rechts = right - 1;    //rechte Grenze (ohne Trennelement)
+        int trennElement = a[right];       //rechtes Element als Trennelement
+        boolean allChecked = false;
+
+        do {
+            while (a[links] < trennElement) {
+                links++;           //suche grösseres >= element von links an
+            }
+            while ((a[rechts] > trennElement) && (rechts > links)) {
+                rechts--;         //suche echt kleinesers < element von rechts an
+            }
+            if (rechts > links) {      //solange keine überschneidung
+                exchange(a, links, rechts);
+                links++;
+                rechts--;   //linke und rechte Grenze verschieben
+            }
+            else {
+                allChecked = true;
+            }
+        } while (!allChecked);
+
+        exchange(a, links, right); //Trennelement an endgültige position a[up]
+
+        if (left < (links - 1)) {
+            if(left < (links - finishSize)){
+                quickInsertionSort(a, left, (links - 1));
+            }else{insertionSort2(a);}
+            
+        } //linke hälfte
+
+        if ((links + 1) < right) {
+            if((links + finishSize) < right){ //solange abstand zwischen links und rechts grösser x
+                quickInsertionSort(a, (links + 1), right);
+            }else{insertionSort2(a);}
+            
+        } //rechte hälfte
+    }
     
     
 }

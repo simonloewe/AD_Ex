@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ch.hslu.ad.sw09a02;
+package ch.hslu.ad.sw09a03;
 
+import ch.hslu.ad.sw09a02.*;
 import ch.hslu.ad.sw08a06.*;
 import ch.hslu.ad.sw08a05.*;
 import ch.hslu.ad.sw08a04.*;
@@ -47,12 +48,21 @@ public class MainSort {
         time = (end-start)/1000;
         System.out.println(time + " sec");
         //sorting.outArray();
-   */     
-   
+   */   
+
         System.out.println("quickSort----------------");
         //sorting.outArray();
         start = System.currentTimeMillis();
         sorting.quickSort(sorting.fillingA(), 0, 12_999);
+        end = System.currentTimeMillis();
+        time = (end-start)/1000;
+        System.out.println(time + " sec");
+        //sorting.outArray();
+   
+        System.out.println("quickInsertionSort----------------");
+        //sorting.outArray();
+        start = System.currentTimeMillis();
+        sorting.quickInsertionSort(sorting.fillingA(), 0, 12_999);
         end = System.currentTimeMillis();
         time = (end-start)/1000;
         System.out.println(time + " sec");
