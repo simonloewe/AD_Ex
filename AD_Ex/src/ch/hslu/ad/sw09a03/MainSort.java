@@ -53,7 +53,7 @@ public class MainSort {
         System.out.println("quickSort----------------");
         //sorting.outArray();
         start = System.currentTimeMillis();
-        sorting.quickSort(sorting.fillingA(), 0, 12_999);
+        sorting.quickSort(sorting.fillingA(), 0, 19_999);
         end = System.currentTimeMillis();
         time = (end-start)/1000;
         System.out.println(time + " sec");
@@ -62,7 +62,7 @@ public class MainSort {
         System.out.println("quickInsertionSort----------------");
         //sorting.outArray();
         start = System.currentTimeMillis();
-        sorting.quickInsertionSort(sorting.fillingA(), 0, 12_999);
+        sorting.quickInsertionSort(sorting.fillingA(), 0, 19_999);
         end = System.currentTimeMillis();
         time = (end-start)/1000;
         System.out.println(time + " sec");

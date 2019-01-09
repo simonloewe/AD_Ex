@@ -14,7 +14,7 @@ import ch.hslu.ad.sw08a06.*;
  */
 public class Sort {
 
-    int aSize = 13_000;
+    int aSize = 20_000;
     
     static int finishSize = 10;
 
