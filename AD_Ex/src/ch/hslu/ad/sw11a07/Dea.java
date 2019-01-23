@@ -17,11 +17,11 @@ public class Dea {
     //0 immer alleine
     //1 immer in ungraden gruppen
 
-    int size = 10;
+    int size = 11;
     public int[] test = new int[size];
     boolean state;
-
-    int abba[] = {0,1,1,0,0,1,0,1,1,1,0};
+    //remove abba and place test instead in isCase methode
+    int abba[] = {0,1,0,1,1,1,0,1,1,1,0};
     
     public int[] fillTest() {
 
