@@ -9,7 +9,7 @@ package ch.hslu.ad.sw12a02;
  *
  * @author lion Optimierter Suchautomat welcher nach dem Pattern ANANAS sucht
  */
-public class Os {
+public class OptSuchautomat {
 
     public String a = "Ananas";
     public String folge = "aabahdawdwadwdsdawdadadafbbjbwawdananas";

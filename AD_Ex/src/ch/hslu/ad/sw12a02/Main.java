@@ -12,7 +12,7 @@ package ch.hslu.ad.sw12a02;
 public class Main {
     
     public static void main(String[] args){
-        Os lauf = new Os();
+        OptSuchautomat lauf = new OptSuchautomat();
         
         System.out.println(lauf.stateSearch());
     }    
